@@ -224,13 +224,26 @@ window.addEventListener('load', () => {
 
 // Add keyboard navigation support
 document.addEventListener('keydown', (e) => {
-    const sections = ['storia', 'battaglie', 'fanfare', 'raduni', 'eredita'];
-    const sectionIndex = sections.indexOf(document.querySelector('section:in-viewport')?.id);
+    const sections = ['storia', 'battaglie', 'fanfare', 'raduni', 'eredita', 'filatelica'];
     
-    if (e.key === 'ArrowDown' && sectionIndex < sections.length - 1) {
-        document.querySelector(`#${sections[sectionIndex + 1]}`).scrollIntoView({ behavior: 'smooth' });
-    } else if (e.key === 'ArrowUp' && sectionIndex > 0) {
-        document.querySelector(`#${sections[sectionIndex - 1]}`).scrollIntoView({ behavior: 'smooth' });
+    if (e.key === 'ArrowDown') {
+        const currentScroll = window.scrollY;
+        const nextSection = sections.find(id => {
+            const element = document.querySelector(`#${id}`);
+            return element && element.offsetTop > currentScroll + 100;
+        });
+        if (nextSection) {
+            document.querySelector(`#${nextSection}`).scrollIntoView({ behavior: 'smooth' });
+        }
+    } else if (e.key === 'ArrowUp') {
+        const currentScroll = window.scrollY;
+        const prevSections = sections.filter(id => {
+            const element = document.querySelector(`#${id}`);
+            return element && element.offsetTop < currentScroll;
+        });
+        if (prevSections.length > 0) {
+            document.querySelector(`#${prevSections[prevSections.length - 1]}`).scrollIntoView({ behavior: 'smooth' });
+        }
     }
 });
 
