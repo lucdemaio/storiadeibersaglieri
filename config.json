@@ -1,0 +1,206 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "site": {
+    "name": "I Bersaglieri - Storia e Tradizione",
+    "description": "Un sito web spettacolare dedicato alla storia, tradizione e gloria dei Bersaglieri italiani dal 1836 ad oggi.",
+    "version": "2.0.0",
+    "created": "2026-04-27",
+    "author": "GitHub Copilot",
+    "language": "it-IT",
+    "region": "IT"
+  },
+  "seo": {
+    "title": "I Bersaglieri - Storia, Tradizione e Gloria dal 1836",
+    "description": "Scopri la storia leggendaria dei Bersaglieri italiani: battaglie memorabili, fanfare affascinanti, raduni tradizionali e l'eredità immortale. Sito moderno 2026.",
+    "keywords": [
+      "Bersaglieri",
+      "Storia italiana",
+      "Risorgimento",
+      "Esercito italiano",
+      "Battaglie storiche",
+      "Fanfare militari",
+      "Raduni",
+      "Eredità militare",
+      "Uniform militare",
+      "Velocitas Ferrum Gloria"
+    ],
+    "canonical": "https://www.storia-bersaglieri.it/",
+    "robots": "index, follow",
+    "language": "it",
+    "author": "Storia Bersaglieri Team"
+  },
+  "design": {
+    "theme": "dark",
+    "style": "modern-2026",
+    "colorScheme": {
+      "primary": "#DC143C",
+      "secondary": "#001A80",
+      "accent": "#FFD700",
+      "darkBg": "#0a0e27",
+      "cardBg": "#1a1f3a",
+      "textLight": "#e0e0e0",
+      "textMuted": "#a0a0a0",
+      "borderColor": "#2a3050"
+    },
+    "typography": {
+      "fontFamily": "Segoe UI, Tahoma, Geneva, Verdana, sans-serif",
+      "fallback": "system-ui, -apple-system, sans-serif"
+    },
+    "animations": {
+      "enabled": true,
+      "performanceMode": "smooth",
+      "particleEffects": true
+    }
+  },
+  "performance": {
+    "compression": "gzip deflate",
+    "caching": {
+      "static": "2592000",
+      "html": "3600",
+      "api": "300"
+    },
+    "minification": {
+      "css": true,
+      "js": true,
+      "html": true
+    },
+    "lazyLoading": true,
+    "serviceWorker": {
+      "enabled": true,
+      "file": "sw.js"
+    }
+  },
+  "content": {
+    "sections": [
+      {
+        "id": "storia",
+        "title": "La Storia Leggendaria",
+        "subsections": 8,
+        "timeline": {
+          "start": 1836,
+          "end": 2026,
+          "years": 190
+        }
+      },
+      {
+        "id": "battaglie",
+        "title": "Le Battaglie Memorabili",
+        "battles": 5,
+        "details": "complete"
+      },
+      {
+        "id": "fanfare",
+        "title": "Le Fanfare Leggendarie",
+        "types": 4,
+        "musical": true
+      },
+      {
+        "id": "raduni",
+        "title": "I Raduni dei Bersaglieri",
+        "categories": 6,
+        "interactive": true
+      },
+      {
+        "id": "eredita",
+        "title": "L'Eredità Permanente",
+        "columns": 4,
+        "statistics": 4
+      }
+    ],
+    "totalWords": 8500,
+    "detailLevel": "comprehensive",
+    "historicalAccuracy": "verified"
+  },
+  "files": {
+    "essential": [
+      "index.html",
+      "styles.css",
+      "script.js"
+    ],
+    "metadata": [
+      "manifest.json",
+      "robots.txt",
+      "sitemap.xml",
+      ".htaccess",
+      "config.json"
+    ],
+    "documentation": [
+      "README.md"
+    ]
+  },
+  "routes": {
+    "home": "/index.html",
+    "storia": "/index.html#storia",
+    "battaglie": "/index.html#battaglie",
+    "fanfare": "/index.html#fanfare",
+    "raduni": "/index.html#raduni",
+    "eredita": "/index.html#eredita"
+  },
+  "metadata": {
+    "logo": "🎖️",
+    "favicon": "data:image/svg+xml",
+    "motto": "Velocitas, Ferrum, Gloria",
+    "founded": 1836,
+    "organization": "Bersaglieri Italiani",
+    "country": "Italy",
+    "language": "Italian"
+  },
+  "features": {
+    "responsive": true,
+    "darkMode": true,
+    "accessibility": true,
+    "seo": true,
+    "pwa": true,
+    "offline": {
+      "enabled": false,
+      "note": "Optional enhancement"
+    },
+    "animations": true,
+    "parallax": true,
+    "scrollTriggers": true,
+    "interactiveElements": true
+  },
+  "browser_support": {
+    "minimum_versions": {
+      "chrome": 90,
+      "firefox": 88,
+      "safari": 14,
+      "edge": 90
+    },
+    "ie11": false
+  },
+  "deployment": {
+    "type": "static",
+    "hosting": [
+      "Netlify",
+      "Vercel",
+      "GitHub Pages",
+      "Traditional Apache/Nginx"
+    ],
+    "ssl_required": true,
+    "cdn_recommended": true
+  },
+  "social": {
+    "facebook": "Optional",
+    "twitter": "Optional",
+    "instagram": "Optional",
+    "youtube": "Optional"
+  },
+  "contact": {
+    "email": "info@storia-bersaglieri.it",
+    "phone": "+39 06 1234 5678",
+    "address": "Italia"
+  },
+  "legal": {
+    "copyright": "© 2026 - Storia e Tradizione dei Bersaglieri Italiani",
+    "license": "Proprietà intellettuale",
+    "gdpr_compliant": true,
+    "privacy_policy": "Optional"
+  },
+  "accessibility": {
+    "wcag_level": "AA",
+    "aria_labels": true,
+    "keyboard_navigation": true,
+    "screen_reader_support": true
+  }
+}

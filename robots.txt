@@ -1,0 +1,68 @@
+# Robots.txt - SEO Configuration for Bersaglieri History Site
+# This file helps search engines crawl and index the site properly
+
+# Allow all bots
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /styles.css
+Allow: /script.js
+Allow: /manifest.json
+Allow: /robots.txt
+Allow: /sitemap.xml
+
+# Disallow nothing - entire site is public
+Disallow: 
+
+# Allow specific important paths
+Allow: /$
+Allow: /#storia
+Allow: /#battaglie
+Allow: /#fanfare
+Allow: /#raduni
+Allow: /#eredita
+
+# Crawl delay to prevent server overload
+Crawl-delay: 1
+
+# Request rate (requests per second)
+Request-rate: 10/1s
+
+# Sitemap location
+Sitemap: https://www.storia-bersaglieri.it/sitemap.xml
+
+# Specific search engine optimizations
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0.1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0.5
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+# Block bad bots
+User-agent: AhrefsBot
+User-agent: SemrushBot
+User-agent: DotBot
+User-agent: MJ12bot
+Disallow: /
+
+# All other restrictions
+User-agent: *
+Disallow: /admin
+Disallow: /private
+Disallow: /temp
+Disallow: /*.pdf$
+Disallow: /*.docx$
+Disallow: /cgi-bin
+
+# Allow indexing of specific content
+User-agent: *
+Allow: *.html$
+Allow: *.css$
+Allow: *.js$
+Allow: *.json$

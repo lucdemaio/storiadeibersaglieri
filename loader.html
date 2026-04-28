@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="I Bersaglieri - Storia, Tradizione e Gloria. Un sito web spettacolare dedicato alla storia dei Bersaglieri italiani dal 1836 ad oggi. Scopri le battaglie memorabili, le fanfare leggendarie, i raduni e l'eredità immortale.">
+    <meta name="keywords" content="Bersaglieri, Storia italiana, Risorgimento, Esercito italiano, Battaglie memorabili, Histoire militaire, Italia">
+    <meta name="author" content="Storia Bersaglieri Team">
+    <meta name="creator" content="GitHub Copilot">
+    <meta name="publisher" content="Storia Bersaglieri">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Italian">
+    <meta name="revisit-after" content="30 days">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.storia-bersaglieri.it/">
+    <meta property="og:title" content="I Bersaglieri - Storia e Tradizione">
+    <meta property="og:description" content="Un sito web spettacolare dedicato alla storia gloriosa dei Bersaglieri italiani. Scopri battaglie, fanfare, raduni e l'eredità immortale.">
+    <meta property="og:image" content="https://www.storia-bersaglieri.it/og-image.jpg">
+    <meta property="og:site_name" content="Storia Bersaglieri">
+    <meta property="og:locale" content="it_IT">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.storia-bersaglieri.it/">
+    <meta name="twitter:title" content="I Bersaglieri - Storia e Tradizione">
+    <meta name="twitter:description" content="Scopri la storia gloriosa dei Bersaglieri italiani con dettagli affascinanti su battaglie, fanfare e raduni.">
+    <meta name="twitter:image" content="https://www.storia-bersaglieri.it/twitter-image.jpg">
+    
+    <!-- Chrome Mobile -->
+    <meta name="theme-color" content="#DC143C">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Bersaglieri">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23DC143C' width='100' height='100'/><text x='50' y='75' font-size='70' text-anchor='middle' fill='%23FFD700' font-weight='bold'>🎖️</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect fill='%230a0e27' width='180' height='180' rx='40'/><text x='90' y='135' font-size='100' text-anchor='middle' fill='%23DC143C' font-weight='bold'>🎖️</text></svg>">
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://www.storia-bersaglieri.it/">
+    <link rel="alternate" hreflang="it" href="https://www.storia-bersaglieri.it/">
+    <link rel="alternate" hreflang="en" href="https://www.storia-bersaglieri.it/en/">
+    
+    <title>I Bersaglieri - Storia, Tradizione e Gloria dal 1836</title>
+    
+    <style>
+        /* Inline Critical CSS per Fast First Paint */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #0f1435 100%);
+            color: #e0e0e0;
+        }
+        
+        .loader {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 2000;
+        }
+        
+        .loader.active {
+            display: block;
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(220, 20, 60, 0.2);
+            border-top-color: #DC143C;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader active">
+        <div class="spinner"></div>
+    </div>
+    
+    <!-- Deferred CSS and JavaScript loading -->
+    <script>
+        // Remove loader when page is fully loaded
+        window.addEventListener('load', () => {
+            const loader = document.querySelector('.loader');
+            if (loader) {
+                loader.classList.remove('active');
+            }
+        });
+        
+        // Service Worker Registration for PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js').catch(err => {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+    </script>
+    
+    <iframe src="index.html" style="width: 100%; height: 100vh; border: none; margin: 0; padding: 0;"></iframe>
+    
+    <noscript>
+        <p>Per visualizzare correttamente questo sito, è necessario abilitare JavaScript nel tuo browser.</p>
+    </noscript>
+</body>
+</html>
