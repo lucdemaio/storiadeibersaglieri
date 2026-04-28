@@ -999,6 +999,201 @@ body {
     font-size: 0.9rem;
 }
 
+/* EMBEDDED PHOTOS IN TEXT */
+.foto-embed-left {
+    float: left;
+    margin: 0 2rem 1.5rem 0;
+    width: 30%;
+    min-width: 250px;
+}
+
+.foto-embed-battle {
+    float: right;
+    margin: 0 0 1.5rem 2rem;
+    width: 35%;
+    min-width: 280px;
+}
+
+.foto-box-inline,
+.foto-box-inline img {
+    width: 100%;
+    border-radius: 8px;
+    border: 3px solid var(--accent-color);
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(220, 20, 60, 0.3);
+}
+
+.foto-box-inline img,
+.foto-box-inline img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.foto-caption,
+.foto-caption-battle {
+    background: var(--card-bg);
+    padding: 1rem;
+    color: var(--text-light);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    border: 1px solid var(--border-color);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    margin-top: -4px;
+}
+
+.foto-caption strong,
+.foto-caption-battle strong {
+    color: var(--accent-color);
+}
+
+/* CARD WITH PHOTO */
+.story-cards .card {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-foto {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;
+    border-bottom: 3px solid var(--accent-color);
+}
+
+.card-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-foto img {
+    transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .foto-embed-left,
+    .foto-embed-battle {
+        float: none;
+        width: 100%;
+        margin: 1.5rem 0;
+    }
+}
+
+/* COMPLETE PHOTO GALLERY */
+.galleria-completa {
+    background: linear-gradient(135deg, rgba(220, 20, 60, 0.05) 0%, rgba(0, 26, 128, 0.05) 100%);
+    padding: 4rem 0;
+    margin-top: 3rem;
+}
+
+.galleria-intro {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 1.05rem;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+.gallery-grid-complete {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.gallery-item-large {
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid var(--border-color);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 24px rgba(220, 20, 60, 0.15);
+}
+
+.gallery-item-large:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(220, 20, 60, 0.25);
+}
+
+.gallery-item-large img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.gallery-item-large:hover img {
+    transform: scale(1.08);
+}
+
+.gallery-item-large h3 {
+    color: var(--accent-color);
+    font-size: 1.15rem;
+    padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+    line-height: 1.4;
+}
+
+.gallery-item-large p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    padding: 0.5rem 1.5rem 1.5rem 1.5rem;
+    flex-grow: 1;
+}
+
+.gallery-conclusione {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(220, 20, 60, 0.1));
+    padding: 2.5rem;
+    border-radius: 12px;
+    border-left: 5px solid var(--accent-color);
+    text-align: center;
+}
+
+.gallery-conclusione p:first-child {
+    color: var(--accent-color);
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.gallery-conclusione p:last-child {
+    color: var(--text-light);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* Responsive Gallery */
+@media (max-width: 1024px) {
+    .gallery-grid-complete {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-grid-complete {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .gallery-item-large h3 {
+        font-size: 1rem;
+    }
+    
+    .gallery-item-large p {
+        font-size: 0.9rem;
+    }
+}
+
 .footer-motto {
     color: var(--primary-color);
     font-weight: 600;
