@@ -1005,6 +1005,8 @@ body {
     margin: 0 2rem 1.5rem 0;
     width: 30%;
     min-width: 250px;
+    z-index: 10;
+    position: relative;
 }
 
 .foto-embed-battle {
@@ -1012,6 +1014,8 @@ body {
     margin: 0 0 1.5rem 2rem;
     width: 35%;
     min-width: 280px;
+    z-index: 10;
+    position: relative;
 }
 
 .foto-box-inline,
