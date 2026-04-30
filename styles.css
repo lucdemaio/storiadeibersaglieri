@@ -1145,6 +1145,186 @@ body {
     line-height: 1.4;
 }
 
+/* SEZIONE MISSIONI AFRICA */
+.missioni-africa-section {
+    background: linear-gradient(135deg, var(--dark-bg) 0%, #0f1435 50%, var(--card-bg) 100%);
+    padding: 6rem 2rem;
+    border-top: 3px solid var(--primary-color);
+}
+
+.section-subtitle {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+.africa-intro {
+    background: rgba(26, 31, 58, 0.7);
+    border-left: 4px solid var(--primary-color);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 16px rgba(220, 20, 60, 0.15);
+}
+
+.africa-intro p {
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
+.africa-context {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.context-box {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(220, 20, 60, 0.1);
+    transition: all 0.3s ease;
+}
+
+.context-box:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 8px 20px rgba(220, 20, 60, 0.2);
+}
+
+.context-box h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.context-box p {
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 0.8rem;
+}
+
+.asmara-gallery {
+    margin-bottom: 3rem;
+}
+
+.asmara-gallery h3 {
+    color: var(--accent-color);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.gallery-caption {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.asmara-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.asmara-photo-card {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 20px rgba(220, 20, 60, 0.15);
+    display: flex;
+    flex-direction: column;
+}
+
+.asmara-photo-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(220, 20, 60, 0.3);
+}
+
+.asmara-photo-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 3px solid var(--primary-color);
+    transition: transform 0.4s ease;
+}
+
+.asmara-photo-card:hover img {
+    transform: scale(1.05);
+}
+
+.photo-info {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.photo-info h4 {
+    color: var(--accent-color);
+    font-size: 1.05rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+}
+
+.photo-info p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+}
+
+.historical-note {
+    background: rgba(220, 20, 60, 0.1);
+    border-left: 3px solid var(--primary-color);
+    padding: 0.8rem;
+    margin-top: 0.8rem;
+    border-radius: 4px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.historical-note strong {
+    color: var(--accent-color);
+}
+
+.asmara-conclusion {
+    background: rgba(26, 31, 58, 0.8);
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    padding: 2.5rem;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(220, 20, 60, 0.2);
+}
+
+.asmara-conclusion p {
+    color: var(--text-light);
+    line-height: 1.9;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.asmara-conclusion p:first-child {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.asmara-conclusion strong {
+    color: var(--primary-color);
+}
+
 .gallery-item-large p {
     color: var(--text-light);
     font-size: 0.95rem;
