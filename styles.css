@@ -1298,6 +1298,202 @@ body {
     color: var(--accent-color);
 }
 
+/* SEZIONE RADUNI E CELEBRAZIONI CONTEMPORANEI */
+.raduni-contemporanei-section {
+    background: linear-gradient(135deg, var(--dark-bg) 0%, #0f1435 50%, var(--card-bg) 100%);
+    padding: 6rem 2rem;
+    border-top: 3px solid var(--accent-color);
+}
+
+.raduni-contemp-intro {
+    background: rgba(26, 31, 58, 0.7);
+    border-left: 4px solid var(--accent-color);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 16px rgba(255, 215, 0, 0.1);
+}
+
+.raduni-contemp-intro p {
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
+.raduni-contemp-gallery {
+    margin-bottom: 3rem;
+}
+
+.raduni-contemp-gallery h3 {
+    color: var(--accent-color);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.gallery-subtitle-contemp {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.raduni-contemp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.raduni-contemp-photo {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 20px rgba(220, 20, 60, 0.15);
+    display: flex;
+    flex-direction: column;
+}
+
+.raduni-contemp-photo:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(255, 215, 0, 0.2);
+}
+
+.raduni-contemp-photo img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 3px solid var(--primary-color);
+    transition: transform 0.4s ease;
+}
+
+.raduni-contemp-photo:hover img {
+    transform: scale(1.08);
+}
+
+/* LIGHTBOX STYLES */
+.lightbox-img {
+    cursor: pointer;
+}
+
+.lightbox-modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    animation: fadeIn 0.3s ease;
+}
+
+.lightbox-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.lightbox-content {
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+    height: 85vh;
+    max-height: 800px;
+}
+
+.lightbox-img-display {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.3);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: var(--accent-color);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.lightbox-close:hover {
+    color: var(--primary-color);
+}
+
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent-color);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    user-select: none;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    color: var(--primary-color);
+}
+
+.lightbox-prev {
+    left: -50px;
+}
+
+.lightbox-next {
+    right: -50px;
+}
+
+.photo-caption-contemp {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    padding: 1rem;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.raduni-contemp-conclusion {
+    background: rgba(255, 215, 0, 0.08);
+    border: 2px solid var(--accent-color);
+    border-radius: 10px;
+    padding: 2.5rem;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(255, 215, 0, 0.15);
+}
+
+.raduni-contemp-conclusion p {
+    color: var(--text-light);
+    line-height: 1.9;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.raduni-contemp-conclusion p:first-child {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
 .asmara-conclusion {
     background: rgba(26, 31, 58, 0.8);
     border: 2px solid var(--primary-color);

@@ -226,6 +226,91 @@ window.addEventListener('load', () => {
 document.addEventListener('keydown', (e) => {
     const sections = ['storia', 'battaglie', 'fanfare', 'raduni', 'eredita', 'filatelica'];
     
+    // Lightbox keyboard support
+    const modal = document.getElementById('lightboxModal');
+    if (modal && modal.classList.contains('active')) {
+        if (e.key === 'Escape') {
+            closeLightbox();
+        }
+    }
+});
+
+// LIGHTBOX FUNCTIONALITY
+let currentLightboxIndex = 0;
+const lightboxImages = [];
+
+function initLightbox() {
+    const lightboxImgs = document.querySelectorAll('.lightbox-img');
+    lightboxImages.length = 0;
+    
+    lightboxImgs.forEach((img, index) => {
+        lightboxImages.push(img.src);
+        
+        img.addEventListener('click', function() {
+            currentLightboxIndex = index;
+            openLightbox(this.src);
+        });
+    });
+}
+
+function openLightbox(imageSrc) {
+    const modal = document.getElementById('lightboxModal');
+    const lightboxImage = document.getElementById('lightboxImage');
+    
+    lightboxImage.src = imageSrc;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    const modal = document.getElementById('lightboxModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+function showPrevImage() {
+    currentLightboxIndex = (currentLightboxIndex - 1 + lightboxImages.length) % lightboxImages.length;
+    openLightbox(lightboxImages[currentLightboxIndex]);
+}
+
+function showNextImage() {
+    currentLightboxIndex = (currentLightboxIndex + 1) % lightboxImages.length;
+    openLightbox(lightboxImages[currentLightboxIndex]);
+}
+
+// Lightbox event listeners
+const modal = document.getElementById('lightboxModal');
+const closeBtn = document.querySelector('.lightbox-close');
+const prevBtn = document.querySelector('.lightbox-prev');
+const nextBtn = document.querySelector('.lightbox-next');
+
+closeBtn.addEventListener('click', closeLightbox);
+prevBtn.addEventListener('click', showPrevImage);
+nextBtn.addEventListener('click', showNextImage);
+
+modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+        closeLightbox();
+    }
+});
+
+// Close lightbox with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeLightbox();
+    }
+    if (modal.classList.contains('active')) {
+        if (e.key === 'ArrowLeft') {
+            showPrevImage();
+        } else if (e.key === 'ArrowRight') {
+            showNextImage();
+        }
+    }
+});
+
+// Initialize lightbox when page loads
+window.addEventListener('load', initLightbox);
+    
     if (e.key === 'ArrowDown') {
         const currentScroll = window.scrollY;
         const nextSection = sections.find(id => {
