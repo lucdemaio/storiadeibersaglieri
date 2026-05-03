@@ -119,3 +119,67 @@ window.addEventListener('scroll', () => {
         header.style.boxShadow = '0 4px 20px rgba(220, 20, 60, 0.2)';
     }
 });
+
+// FUNZIONE PER AGGIUNGERE I PULSANTI DI CONDIVISIONE
+function addShareButtons() {
+    const pages = document.querySelectorAll('.page-content');
+    
+    pages.forEach(page => {
+        // Se i pulsanti di condivisione già esistono, rimuovili
+        const existingShare = page.querySelector('.share-section');
+        if (existingShare) {
+            existingShare.remove();
+        }
+        
+        // Crea il div della sezione condivisione
+        const shareSection = document.createElement('div');
+        shareSection.className = 'share-section';
+        
+        // Ottieni il titolo della pagina per la condivisione
+        const pageTitle = page.querySelector('h2') ? page.querySelector('h2').textContent : 'I Bersaglieri';
+        const pageId = page.id;
+        
+        // Crea il testo per la condivisione
+        const shareText = `Scopri di più su ${pageTitle} nel sito dedicato ai Bersaglieri - Velocità, Onore e Tradizione!`;
+        const pageUrl = window.location.href;
+        
+        // Crea i pulsanti di condivisione
+        const shareLabel = document.createElement('div');
+        shareLabel.className = 'share-label';
+        shareLabel.textContent = 'Condividi questa pagina';
+        
+        const whatsappBtn = document.createElement('a');
+        whatsappBtn.className = 'share-btn whatsapp';
+        whatsappBtn.href = `https://wa.me/?text=${encodeURIComponent(shareText + ' ' + pageUrl)}`;
+        whatsappBtn.target = '_blank';
+        whatsappBtn.innerHTML = '📱 WhatsApp';
+        
+        const telegramBtn = document.createElement('a');
+        telegramBtn.className = 'share-btn telegram';
+        telegramBtn.href = `https://t.me/share/url?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(shareText)}`;
+        telegramBtn.target = '_blank';
+        telegramBtn.innerHTML = '✈️ Telegram';
+        
+        // Aggiungi i pulsanti al contenitore
+        shareSection.appendChild(shareLabel);
+        shareSection.appendChild(whatsappBtn);
+        shareSection.appendChild(telegramBtn);
+        
+        // Aggiungi la sezione di condivisione alla fine della pagina
+        page.appendChild(shareSection);
+    });
+}
+
+// Chiama la funzione all'inizio
+addShareButtons();
+
+// Chiama la funzione ogni volta che cambia pagina
+document.addEventListener('DOMContentLoaded', function() {
+    const navBtns = document.querySelectorAll('.nav-btn');
+    navBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Aggiungi un piccolo ritardo per assicurarti che la pagina sia visibile
+            setTimeout(addShareButtons, 100);
+        });
+    });
+});
