@@ -137,7 +137,6 @@ function addShareButtons() {
         
         // Ottieni il titolo della pagina per la condivisione
         const pageTitle = page.querySelector('h2') ? page.querySelector('h2').textContent : 'I Bersaglieri';
-        const pageId = page.id;
         
         // Crea il testo per la condivisione
         const shareText = `Scopri di più su ${pageTitle} nel sito dedicato ai Bersaglieri - Velocità, Onore e Tradizione!`;
@@ -166,15 +165,20 @@ function addShareButtons() {
         shareSection.appendChild(telegramBtn);
         
         // Aggiungi la sezione di condivisione alla fine della pagina
-        page.appendChild(shareSection);
+        // Dopo completamente tutto il contenuto della pagina
+        const pageBody = page.querySelector('.page-body');
+        if (pageBody && pageBody.parentNode) {
+            pageBody.parentNode.insertBefore(shareSection, pageBody.nextSibling);
+        } else {
+            page.appendChild(shareSection);
+        }
     });
 }
 
-// Chiama la funzione all'inizio
-addShareButtons();
-
-// Chiama la funzione ogni volta che cambia pagina
+// Chiama la funzione al caricamento
 document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(addShareButtons, 100);
+    
     const navBtns = document.querySelectorAll('.nav-btn');
     navBtns.forEach(btn => {
         btn.addEventListener('click', function() {
